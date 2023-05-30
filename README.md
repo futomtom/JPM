@@ -1,4 +1,4 @@
-### Screenshots and Video
+### Screenshots
 
 | Screen/Video 1 | Screen/Video 2 | Screen/Video 3 |
 | - | - | - |
