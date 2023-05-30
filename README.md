@@ -2,8 +2,8 @@
 
 | Screen/Video 1 | Screen/Video 2 | Screen/Video 3 |
 | - | - | - |
-| <img src="SCR_01" height="500"> | <img src="SCR_02" height="500">  | <img src="SCR_03" height="500">  |
-| <img src="SCR_04" height="500"> | <img src="SCR_05" height="500">  | <img src="SCR_06" height="500">  |
+| <img src="https://github.com/futomtom/JPM/blob/64fa15925462dd8b01acee60ee00a5e5226dea89/Screenshots/SCR_01.png" height="500"> | <img src="https://github.com/futomtom/JPM/blob/64fa15925462dd8b01acee60ee00a5e5226dea89/Screenshots/SCR_02.png" height="500">  | <img src="https://github.com/futomtom/JPM/blob/64fa15925462dd8b01acee60ee00a5e5226dea89/Screenshots/SCR_03.png" height="500">  |
+| <img src="https://github.com/futomtom/JPM/blob/64fa15925462dd8b01acee60ee00a5e5226dea89/Screenshots/SCR_04.png" height="500"> | <img src="https://github.com/futomtom/JPM/blob/64fa15925462dd8b01acee60ee00a5e5226dea89/Screenshots/SCR_05.png" height="500">  | <img src="https://github.com/futomtom/JPM/blob/64fa15925462dd8b01acee60ee00a5e5226dea89/Screenshots/SCR_06.png" height="500">  |
 
 
 
