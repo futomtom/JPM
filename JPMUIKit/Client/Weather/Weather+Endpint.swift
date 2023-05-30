@@ -14,6 +14,7 @@ extension WeatherClient {
             }
         }
 
+        // Generate the URLRequest for the endpoint
         func MakeURLRequest() -> URLRequest {
             var urlComponents = URLComponents(string: WeatherClient.baseUrlString)!
             urlComponents.path += path

@@ -9,14 +9,14 @@ struct ForecastList: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(spacing: 20) {
+            LazyHStack() {
                 ForEach(forecasts, id: \.dtTxt) { forecast in
                     HourView(forecast)
+                        .frame(maxWidth: .infinity, maxHeight: 240)
                 }
             }
         }
         .padding(.horizontal)
-        .frame(height: isLandScape ? 200 : 300)
     }
 }
 

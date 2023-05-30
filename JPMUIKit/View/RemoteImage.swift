@@ -15,8 +15,6 @@ struct RemoteImage: View {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-            } else {
-                Color.gray // Placeholder or loading indicator
             }
         }
         .onAppear {

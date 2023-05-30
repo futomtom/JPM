@@ -30,7 +30,15 @@ extension CLLocation {
 }
 
 extension View {
-    func showAlert(_ isPresented: Binding<Bool>, alert: AlertType, action: (() -> Void)? = nil) -> Alert {
+    func fontStyle(_ size: CGFloat) -> some View {
+        modifier(TextStyle(fontSize: size))
+    }
+
+    func showAlert(
+        _ isPresented: Binding<Bool>,
+        alert: AlertType,
+        action: (() -> Void)? = nil
+    ) -> Alert {
         Alert(
             title: Text(alert.title),
             message: Text(alert.message),
@@ -50,6 +58,10 @@ extension View {
         overlay(
             LoadingView(isLoading: isLoading)
         )
+    }
+
+    func blueGradientBackground() -> some View {
+        modifier(BackgroundModifier())
     }
 }
 

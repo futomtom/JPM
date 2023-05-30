@@ -18,23 +18,18 @@ struct HourView: View {
     }
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack() {
             Text(time)
-            RemoteImage(imageUrl: iconURL!)
-                .frame(minWidth: 80, minHeight: 80)
+            Spacer(minLength: 1)
+            RemoteImage(imageUrl: iconURL)
+                .frame(width: 48, height: 48)
+            Spacer(minLength: 1)
             Text(temperature)
         }
         .fontStyle(20)
         .padding()
         .foregroundColor(.white)
-        .background(
-            RoundedRectangle(cornerRadius: 20)
-                .fill(LinearGradient(
-                    gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue.opacity(0.5)]),
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
-        )
+        .blueGradientBackground()
     }
 }
 

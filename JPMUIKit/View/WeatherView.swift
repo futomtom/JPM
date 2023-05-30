@@ -43,7 +43,9 @@ struct WeatherView: View {
             }
             Text(weather.main.subtitle)
         }
+        .padding()
         .fontStyle(20)
+        .blueGradientBackground()
     }
 }
 
