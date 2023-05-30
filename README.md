@@ -1,6 +1,6 @@
 ### Screenshots
 
-| Screen/Video 1 | Screen/Video 2 | Screen/Video 3 |
+|  |  |  |
 | - | - | - |
 | ![Image Name](Screenshots/SCR_01.png) |  ![Image Name](Screenshots/SCR_02.png) |  ![Image Name](Screenshots/SCR_03.png)>  |
 | ![Image Name](Screenshots/SCR_04.png) |  ![Image Name](Screenshots/SCR_05.png) |  ![Image Name](Screenshots/SCR_06.png)>  |
