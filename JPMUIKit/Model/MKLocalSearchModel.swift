@@ -2,7 +2,7 @@ import Combine
 import Foundation
 import MapKit
 
-class MKLocalSearchModel: NSObject, ObservableObject {
+final class MKLocalSearchModel: NSObject, ObservableObject {
     @Published var queryText: String = ""
     @Published private(set) var searchResults: [MKLocalSearchCompletion] = []
 

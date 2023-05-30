@@ -14,9 +14,9 @@ struct AskLocationView: View {
                 Label("Current Location", systemImage: "location")
             }
         }
-        .alert(isPresented: $store.showLocationAlert) {
+        .alert(isPresented: $store.showPermissionAlert) {
             showAlert(
-                $store.showLocationAlert,
+                $store.showPermissionAlert,
                 alert: .locationDenied,
                 action: { UIApplication.shared.open(UIApplication.appSettingsURL) }
             )

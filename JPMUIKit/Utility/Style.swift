@@ -13,11 +13,3 @@ extension View {
         modifier(TextStyle(fontSize: size))
     }
 }
-
-struct FixedSpacer: View {
-    var height: CGFloat
-    var body: some View {
-        Spacer()
-            .frame(height: height)
-    }
-}

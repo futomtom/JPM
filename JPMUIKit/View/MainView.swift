@@ -17,7 +17,6 @@ struct MainView: View {
                             store.requestUserLocation()
                         }
                         .overlayLoadingView(isLoading: store.isLoading)
-
                     Spacer()
                 }
                 if store.authorizationStatus == .denied, store.city == nil {

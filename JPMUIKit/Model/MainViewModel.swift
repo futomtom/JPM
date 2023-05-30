@@ -5,7 +5,7 @@ import SwiftUI
 @MainActor
 final class MainViewModel: NSObject, ObservableObject {
     @Published var city: City?
-    @Published var showLocationAlert: Bool = false
+    @Published var showPermissionAlert: Bool = false
     @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
     @Published var weather: WeatherResponse?
     @Published var isLoading: Bool = false
@@ -21,6 +21,7 @@ final class MainViewModel: NSObject, ObservableObject {
     }
 
     func requestUserLocation() {
+        // if location is granted when App in background, then city will not be updated if it is already present.
         if let city = city {
             fetchWeather(city: city)
             return
@@ -35,6 +36,7 @@ final class MainViewModel: NSObject, ObservableObject {
         }
     }
 
+    // Fetch weather data for a given city
     func fetchWeather(city: City) {
         Task {
             isLoading = true
@@ -43,6 +45,7 @@ final class MainViewModel: NSObject, ObservableObject {
         }
     }
 
+    // Update the selected city based on the MKLocalSearch from user's input
     func updateCity(searchResult: MKLocalSearchCompletion) {
         getCoordinates(searchCompletion: searchResult) { [weak self] coordinates in
             let name = searchResult.title.split(separator: ",")[0].description
@@ -53,6 +56,7 @@ final class MainViewModel: NSObject, ObservableObject {
         }
     }
 
+    // Get coordinates for a given localSearch result
     private func getCoordinates(searchCompletion: MKLocalSearchCompletion, completion: @escaping (CLLocationCoordinate2D) -> Void) {
         let searchRequest = MKLocalSearch.Request(completion: searchCompletion)
         let search = MKLocalSearch(request: searchRequest)
@@ -67,7 +71,7 @@ final class MainViewModel: NSObject, ObservableObject {
 extension MainViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         authorizationStatus = status
-        showLocationAlert = status == .denied
+        showPermissionAlert = status == .denied
         manager.requestLocation()
     }
 

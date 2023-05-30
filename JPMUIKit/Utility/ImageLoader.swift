@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class ImageLoader: ObservableObject {
+final class ImageLoader: ObservableObject {
     @Published var image: UIImage?
 
     private let url: URL
@@ -24,7 +24,7 @@ class ImageLoader: ObservableObject {
                         self.image = image
                     }
                     let cachedData = CachedURLResponse(response: response, data: data)
-                    self.cache.storeCachedResponse(cachedData, for: URLRequest(url: self.url))
+                    self.cache.storeCachedResponse(cachedData, for: URLRequest(url: self.url)) // Caches the response data.
                 }
             }.resume()
         }
