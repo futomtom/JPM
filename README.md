@@ -25,6 +25,8 @@ In addition to the implemented requirements, the project includes some noteworth
 
 - **Generic Endpoint Response Handling**: The project leverages generics to handle fetching different response types from endpoints, allowing for flexibility and reusability.
 - **Async/Await for Concurrent and Asynchronous Tasks**: Async/await functionality is utilized to manage concurrent and asynchronous tasks effectively.
+- **Using Combine to Buffer User's Search Typing for Sending  query request**: Utilizing Combine's `debounce` operator to delay query requests based on the user's search typing.
+
 
 ### Potential Improvements (With More Time)
 
