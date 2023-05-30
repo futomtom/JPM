@@ -4,7 +4,7 @@ import SwiftUI
 struct WeatherView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     var weather: WeatherResponse?
-    private var isPortrait: Bool {
+    private var isLandscape: Bool {
         verticalSizeClass == .compact
     }
 
@@ -19,9 +19,6 @@ struct WeatherView: View {
     private func main(weather: WeatherResponse) -> some View {
         VHStack {
             titleView(weather)
-            if isPortrait {
-                Spacer()
-            }
             subtitleView(weather)
         }
     }
@@ -37,11 +34,13 @@ struct WeatherView: View {
 
     private func subtitleView(_ weather: WeatherResponse) -> some View {
         VStack(spacing: 10) {
-            if isPortrait, let iconURL = weather.weather.first?.iconURL {
-                RemoteImage(imageUrl: iconURL)
-                    .frame(width: 48, height: 48)
+            HStack {
+                if let iconURL = weather.weather.first?.iconURL {
+                    RemoteImage(imageUrl: iconURL)
+                        .frame(width: 20, height: 20)
+                }
+                Text(weather.weather.first?.description ?? "")
             }
-            Text(weather.weather.first?.description ?? "")
             Text(weather.main.subtitle)
         }
         .fontStyle(20)

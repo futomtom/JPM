@@ -11,12 +11,15 @@ struct MainView: View {
                     HeaderView(mainStore: store)
                     WeatherView(weather: store.weather)
                         .onAppear {
-                            getWeatherOrLocationIfNeeded()
+                            fetchWeatherOrLocationIfNeeded()
                         }
                         .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
                             store.requestUserLocation()
                         }
                         .overlayLoadingView(isLoading: store.isLoading)
+                    if true {
+                        ForecastList(forecasts: store.forecast?.list ?? [])
+                    }
                     Spacer()
                 }
                 if store.authorizationStatus == .denied, store.city == nil {
@@ -28,7 +31,7 @@ struct MainView: View {
 }
 
 extension MainView {
-    private func getWeatherOrLocationIfNeeded() {
+    private func fetchWeatherOrLocationIfNeeded() {
         guard store.weather == nil else {
             return
         }

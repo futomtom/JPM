@@ -8,6 +8,7 @@ final class MainViewModel: NSObject, ObservableObject {
     @Published var showPermissionAlert: Bool = false
     @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
     @Published var weather: WeatherResponse?
+    @Published var forecast: ForecastResponse?
     @Published var isLoading: Bool = false
 
     private var locationManager: CLLocationManager = .init()
@@ -40,7 +41,17 @@ final class MainViewModel: NSObject, ObservableObject {
     func fetchWeather(city: City) {
         Task {
             isLoading = true
-            weather = try? await WeatherClient.shared.fetch(.current(city: city))
+            async let weatherTask: WeatherResponse = WeatherClient.shared.fetch(.current(city: city))
+            async let forecastTask: ForecastResponse = WeatherClient.shared.fetch(.forecast(city: city))
+
+            do {
+                weather = try await weatherTask
+                forecast = try await forecastTask
+            } catch {
+                // Handle any errors that occurred during fetching the weather or forecast
+                print("Error fetching weather data: \(error)")
+            }
+
             isLoading = false
         }
     }

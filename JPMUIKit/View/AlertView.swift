@@ -8,7 +8,7 @@ enum AlertType {
     var title: String {
         switch self {
         case .locationDenied:
-            return "location disabled"
+            return "Location disabled"
         }
     }
 

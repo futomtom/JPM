@@ -4,15 +4,20 @@ import UIKit
 final class ImageLoader: ObservableObject {
     @Published var image: UIImage?
 
-    private let url: URL
+    private let url: URL?
     private let cache: URLCache
 
-    init(url: URL) {
+    init(url: URL?) {
         self.url = url
         cache = URLCache.shared
     }
 
     func loadImage() {
+        guard let url = url else {
+            image = UIImage(systemName: "photo")
+            return
+        }
+
         if let cachedResponse = cache.cachedResponse(for: URLRequest(url: url)),
            let image = UIImage(data: cachedResponse.data) {
             self.image = image
@@ -24,7 +29,7 @@ final class ImageLoader: ObservableObject {
                         self.image = image
                     }
                     let cachedData = CachedURLResponse(response: response, data: data)
-                    self.cache.storeCachedResponse(cachedData, for: URLRequest(url: self.url)) // Caches the response data.
+                    self.cache.storeCachedResponse(cachedData, for: URLRequest(url: url)) // Caches the response data.
                 }
             }.resume()
         }

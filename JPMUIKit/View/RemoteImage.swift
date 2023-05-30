@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct RemoteImage: View {
-    let imageUrl: URL
+    let imageUrl: URL?
     @StateObject private var imageLoader: ImageLoader
 
-    init(imageUrl: URL) {
+    init(imageUrl: URL?) {
         self.imageUrl = imageUrl
         _imageLoader = StateObject(wrappedValue: ImageLoader(url: imageUrl))
     }
