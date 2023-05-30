@@ -2,9 +2,8 @@
 
 |  |  |  |
 | - | - | - |
-| ![Image Name](Screenshots/SCR_01.png) |  ![Image Name](Screenshots/SCR_02.png) |  ![Image Name](Screenshots/SCR_03.png)>  |
-| ![Image Name](Screenshots/SCR_04.png) |  ![Image Name](Screenshots/SCR_05.png) |  ![Image Name](Screenshots/SCR_06.png)>  |
-
+| <img src="Screenshots/SCR_01.png" height="300"> |  <img src="Screenshots/SCR_02.png" height="300">|  <img src="Screenshots/SCR_03.png" height="300">  |
+| <img src="Screenshots/SCR_04.png" height="300"> | <img src="Screenshots/SCR_05.png" width="200"> |  <img src="Screenshots/SCR_06.png" height="300">  |
 
 
 The project is designed to support iOS 14 and is primarily built using SwiftUI, accounting for approximately 90% of the implementation. However, it is worth noting that it is a UIKit project.
