@@ -17,9 +17,9 @@ struct MainView: View {
                             store.requestUserLocation()
                         }
                         .overlayLoadingView(isLoading: store.isLoading)
-                    if true {
-                        ForecastList(forecasts: store.forecast?.list ?? [])
-                    }
+
+                    ForecastList(forecasts: store.forecast?.list ?? [])
+
                     Spacer()
                 }
                 if store.authorizationStatus == .denied, store.city == nil {
@@ -46,6 +46,8 @@ extension MainView {
 
 struct Main_Previews: PreviewProvider {
     static var previews: some View {
+        let _ = City.savedCity = City("san Jose", 37.3940274, longitude: -121.8676458)
         MainView(store: MainViewModel())
     }
 }
+
