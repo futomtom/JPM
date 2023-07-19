@@ -6,7 +6,7 @@
 | <img src="Screenshots/SCR_04.png" height="300"> | <img src="Screenshots/SCR_05.png" width="200"> |  <img src="Screenshots/SCR_06.png" height="300">  |
 
 
-The project is designed to support iOS 14 and serves as a UIKit skeleton project. However, the majority of its implementation, approximately 90%, is built using SwiftUI. I have also worked with UIKit for six years, but I believe that declarative programming, such as SwiftUI, offers Simplicity and Readability.
+**The take-home project requires us to begin with a UIKit skeleton project, and it is designed to be compatible with iOS 14 and above**. However, the majority of its implementation, approximately 90%, is built using SwiftUI. I have also worked with UIKit for six years, but I believe that declarative programming, such as SwiftUI, offers Simplicity and Readability.
 
 ### Implemented Requirements
 
